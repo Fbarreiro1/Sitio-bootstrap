@@ -9,25 +9,42 @@ body {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
+
+@mixin imgVar($widthImg, $heightImg) {
+    width: $widthImg;
+    height: $heightImg;
+
+}
+@mixin botonVar($backgroundBoton, $textBoton) {
+    background-color: $backgroundBoton;
+    color: $textBoton;
+
+}
+
 .catalogos {
 	img {
-		width:285px;
-		height:400px;
+		@include imgVar(285px,400px);
+		
 	};
 	.btn {
 		&:hover {
-			background-color:$blue !important;
-			color: $white !important;
+			@include botonVar($blue !important,$white !important);
+			
 		}
 	}
 	
 }
 .footerNosotros {
 	img {
-		width:40px;
-		height:40px;
+		@include imgVar(40px,40px);
+		
 	};
 }
+.btnBold {
+@extend .btn;
+	font-weight: bold !important;
+}
+
 .buscador {
 	padding-top: 20px;
 }
